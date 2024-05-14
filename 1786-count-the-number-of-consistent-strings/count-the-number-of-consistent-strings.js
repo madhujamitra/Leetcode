@@ -9,7 +9,6 @@ var countConsistentStrings = function(allowed, words) {
 for(let i = 0; i < words.length; i++){
     let val = words[i].split("")
     let out = val.every( (x) => allowed.includes(x))
-    console.log(out);
     count = out ? count + 1 : count;
 
 }
