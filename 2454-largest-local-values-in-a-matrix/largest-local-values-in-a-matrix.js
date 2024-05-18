@@ -19,7 +19,6 @@ var largestLocal = function (grid) {
 
     }
 
-    //console.log(newValue)
     return newValue
 
 };
@@ -33,7 +32,7 @@ function findingMaxValue(row, coloum, grid) {
         }
     }
     let maxValue = Math.max(...arrArr)
-    console.log(maxValue)
+
     return maxValue
 
 }
