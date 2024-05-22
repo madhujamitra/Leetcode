@@ -7,9 +7,9 @@
 var matrixReshape = function (mat, r, c) {
     let arr = mat.flat()
     if (arr.length !== r * c) return mat
-let newArr = []
+    let newArr = []
     for (let i = 0; i < r; i++) {
-newArr.push(arr.splice(0,c))
+        newArr.push(arr.splice(0, c))
 
     }
 
