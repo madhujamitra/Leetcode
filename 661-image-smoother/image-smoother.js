@@ -3,7 +3,7 @@
  * @return {number[][]}
  */
 var imageSmoother = function (img) {
-let arrVal = []
+    let arrVal = []
     for (let i = 0; i < img.length; i++) {
         let arrNew = []
         for (let j = 0; j < img[i].length; j++) {
@@ -24,20 +24,11 @@ let arrVal = []
                 (accumulator, currentValue) => accumulator + currentValue,
                 0,
             );
-       
-        arrNew[j] = (Math.floor(sumWithInitial/val.length))
+
+            arrNew[j] = (Math.floor(sumWithInitial / val.length))
         }
-    arrVal.push(arrNew)
+        arrVal.push(arrNew)
     }
-     return arrVal
+    return arrVal
 };
 
-// 137
-// 141
-// 137
-// 141
-// 138
-// 141
-// 137
-// 141
-// 137
