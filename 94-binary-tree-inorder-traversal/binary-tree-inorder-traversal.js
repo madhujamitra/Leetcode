@@ -10,19 +10,21 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var inorderTraversal = function(root) {
-var arr = []
-    function inorder(root){
+var inorderTraversal = function (root) {
 
-        if(root === null) return root
-        inorder(root.left);
+    var arr = []
+    function dfs(node) {
+        if (node === null) {
+            return node
+        }
+        dfs(node.left)
+        arr.push(node.val)
+        dfs(node.right)
         
-        // Visit the root
-        arr.push(root.val);
         
-        // Traverse the right subtree
-        inorder(root.right);
     }
-inorder(root)
-   return arr
+
+    dfs(root)
+    return arr
+
 };
