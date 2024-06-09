@@ -4,6 +4,7 @@
  * @return {number[]}
  */
 var intersection = function (nums1, nums2) {
-    let arr = nums1.filter(x => nums2.includes(x))
-    return _.uniq(arr)
+    let arr1 = [...new Set(nums1)]
+    let arr = arr1.filter(x => nums2.includes(x))
+    return arr
 };
