@@ -16,8 +16,8 @@ var fourSum = function (nums, target) {
             while (left < right) {
                 let sum = nums[i] + nums[j] + nums[left] + nums[right];
                 let arr = [nums[i], nums[j], nums[left], nums[right]].sort((a, b) => a - b);
-                const includesArray = result.some(item => JSON.stringify(item) === JSON.stringify(arr));
-                if (sum === target && !includesArray) {
+                //const includesArray = result.some(item => JSON.stringify(item) === JSON.stringify(arr));
+                if (sum === target ) {
                     result.push([nums[i], nums[j], nums[left], nums[right]]);
                     
                     // Move left and right pointers to skip duplicates
@@ -32,16 +32,7 @@ var fourSum = function (nums, target) {
                     right--;
                 }
             }
-            // for (let k = j + 1; k < nums.length; k++) {
-            //     for (let l = k + 1; l < nums.length; l++) {
-            //         let sum = nums[i] + nums[j] + nums[k] + nums[l]
-            //         let arr = [nums[i], nums[j], nums[k], nums[l]].sort((a, b) => a - b);
-            //         const includesArray = result.some(item => JSON.stringify(item) === JSON.stringify(arr));
-            //         if (sum === target && !includesArray) {
-            //             result.push(arr)
-            //         }
-            //     }
-            // }
+
         }
     }
 
