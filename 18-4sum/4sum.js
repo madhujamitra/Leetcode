@@ -15,7 +15,7 @@ var fourSum = function (nums, target) {
 
             while (left < right) {
                 let sum = nums[i] + nums[j] + nums[left] + nums[right];
-                let arr = [nums[i], nums[j], nums[left], nums[right]].sort((a, b) => a - b);
+                //let arr = [nums[i], nums[j], nums[left], nums[right]].sort((a, b) => a - b);
                 //const includesArray = result.some(item => JSON.stringify(item) === JSON.stringify(arr));
                 if (sum === target ) {
                     result.push([nums[i], nums[j], nums[left], nums[right]]);
