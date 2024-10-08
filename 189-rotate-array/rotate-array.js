@@ -5,10 +5,12 @@
  */
 var rotate = function (nums, k) {
     let l = nums.length
-    k = k % l
-    if (nums.length <= 1) {
-        return nums
+    let min
+    if (k > l) {
+        k = k % l
     }
-    let temp = nums.splice(nums.length - k);
-    nums.unshift(...temp);
+    min = l - k
+
+    let arr = nums.splice(min)
+    nums.unshift(...arr)
 };
