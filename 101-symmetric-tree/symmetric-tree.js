@@ -10,22 +10,18 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isSymmetric = function (root) {
-    if (root === null) return true
-    return mirror(root.left, root.right)
+var isSymmetric = function(root) {
+        if(!root) return true;
+    
+    function inner(left, right){
+        
+    if(!left && !right) return true
+    if(!left || !right) return false
 
-    function mirror(left, right) {
-        if (left === null && right === null) return true
-        if (left == null || right == null) return false;
-
-        return left.val === right.val &&
-            mirror(left.left, right.right) &&
-            mirror(left.right, right.left);
-
+      return (left.val === right.val) &&
+               inner(left.left, right.right) &&
+               inner(left.right, right.left);
     }
 
-
-
-
-
+   return inner(root.left, root.right)
 };
