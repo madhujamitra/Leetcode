@@ -3,19 +3,18 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-    let result = []
-    let newMap = new Map();
+    let newMap = new Map()
     for (let i = 0; i < strs.length; i++) {
-        let dummy = toSort(strs[i])
-        if (!newMap[dummy]) {
-            newMap[dummy] = [];
+        let val = compair(strs[i])
+        if (newMap.has(val)) {
+
+            newMap.get(val).push(strs[i]);
+        } else {
+            newMap.set(val, [strs[i]]);
         }
-        newMap[dummy].push(strs[i]);
     }
-
-    return Object.values(newMap);
+return [...newMap.values()]
 };
-
-function toSort(val) {
-    return val.toString().split("").sort().join()
+function compair(value) {
+    return value.split("").sort().join('')
 }
