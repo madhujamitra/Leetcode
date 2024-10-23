@@ -12,19 +12,17 @@
  */
 var inorderTraversal = function (root) {
 
-    var arr = []
-    function dfs(node) {
-        if (node === null) {
-            return node
-        }
-        dfs(node.left)
-        arr.push(node.val)
-        dfs(node.right)
-        
-        
-    }
+    let arr = []
+    function inner(root) {
+        if (!root) return
 
-    dfs(root)
+
+        inner(root.left)
+        arr.push(root.val)
+        inner(root.right)
+    }
+    inner(root)
+
     return arr
 
 };
