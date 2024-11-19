@@ -21,15 +21,11 @@ var insertGreatestCommonDivisors = function(head) {
 
 };
 function findGCD(a, b){
-    let smaller = Math.min(a, b);
-    let hcf = 1;
- 
-    for (let i = 1; i <= smaller; i++) {
-        if (a % i === 0 && b % i === 0) {
-            hcf = i;
-        }
+ while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
     }
- 
-    return hcf;
+    return a;
 
 }
