@@ -3,7 +3,5 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    s =  s.trim().split(" ").reverse();
-    return s.join(" ").replace( /\s\s+/g , ' ')
-
+    return s.trim().split(" ").reverse().join(" ").replace(/\s\s+/g, ' ')
 };
