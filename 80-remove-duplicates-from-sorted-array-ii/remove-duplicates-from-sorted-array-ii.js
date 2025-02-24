@@ -3,22 +3,18 @@
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-
-
-    for (let i = 0; i < nums.length; i++) {
-        let count = 1
-        for (let j = i; j < nums.length -1; j++) {
-
-            if (nums[i] === nums[j+ 1]) {
-                count++
-                if (count > 2) {
-                    nums.splice(j + 1, 1)
-                    j--
-                }
-            }
+    let count = new Map();
+    for (i = 0; i < nums.length;) {
+        if (!count.has(nums[i])) {
+            count.set(nums[i], 1)
+            i++
+        } else if (count.get(nums[i]) < 2) {
+            count.set(nums[i], count.get(nums[i]) + 1)
+            i++
+        } else {
+            nums.splice(i, 1);
         }
     }
-
-    return nums.length
+    //return nums
 
 };
