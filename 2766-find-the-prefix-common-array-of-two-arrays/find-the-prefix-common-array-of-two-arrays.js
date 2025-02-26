@@ -15,7 +15,7 @@ var findThePrefixCommonArray = function (A, B) {
 };
 
 function findtheCommon(arry) {
-    console.log(arry)
+
     let count = 0
     for (let i = 0; i < arry.length; i++) {
         for (j = i+1; j < arry.length; j++) {
