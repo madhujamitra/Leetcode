@@ -3,17 +3,25 @@
  * @return {number}
  */
 var firstUniqChar = function (s) {
-    let counter = new Map()
-
+    s = s.toString().split("")
+    let newMap = new Map()
+    let count = 0
     for (let i = 0; i < s.length; i++) {
-        counter[s[i]] = (counter[s[i]] || 0) + 1
+        if (newMap.has(s[i])) {
+            newMap.set(s[i], newMap.get(s[i]) + 1)
+        } else {
+            newMap.set(s[i], 1)
+        }
+
     }
-
-    for (let i = 0; i < s.length; i++) {
-        if (counter[s[i]] === 1) {
-            console.log(i);
-            return i;
+  for (let i = 0; i < s.length; i++) {
+        if (newMap.get(s[i]) === 1) {
+            return i; // Return the index of the first unique character
         }
     }
-    return -1;
+
+    return -1
+    
+
+
 };
