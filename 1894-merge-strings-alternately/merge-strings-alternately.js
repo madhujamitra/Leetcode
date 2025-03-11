@@ -4,19 +4,27 @@
  * @return {string}
  */
 var mergeAlternately = function (word1, word2) {
-    let wor1 = word1.toString().split('');
-    let wor2 = word2.toString().split('');
-    let total = Math.max(wor1.length, wor2.length)
-    let merge = []
-    let i = 0
-    while (i < total) {
-        if (wor1[i] !== undefined) {
-            merge.push(wor1[i])
+    word1 = word1.toString().split("")
+    word2 = word2.toString().split("")
+
+    let n = word1.length
+    let m = word2.length
+    let output = []
+
+    if (n === 0) return word2
+    if (m === 0) return word1
+
+    let len = n > m ? n : m
+
+    for(let i = 0; i < len; i++) {
+        if (n > 0) {
+            output.push(word1[i])
+            n--
         }
-        if (wor2[i] !== undefined) {
-            merge.push(wor2[i])
+        if (m > 0) {
+            output.push(word2[i])
+            m--
         }
-        i++
     }
-        return merge.join("")
-    };
+return output.join("")
+};
